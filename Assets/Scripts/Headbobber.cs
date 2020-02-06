@@ -3,9 +3,9 @@
 public class Headbobber : MonoBehaviour
 {
     private float timer = 0.0f;
-    private float bobbingSpeed = 0.18f;
+    private float bobbingSpeed = 0.13f;
     private float bobbingAmount = 0.2f;
-    private float midpoint = 4.0f;
+    private float midpoint = 0.5f;
 
     private void Update()
     {
