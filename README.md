@@ -5,12 +5,12 @@ A cyberpunk themed first person shooter where the protagonist is trying to escap
 
 ## **Implemented Features :** 
 - [x] FPS Combat
+- [x] Dash Ability
 
 ## **Planned Features :**
 - [ ] Ragdoll Animations
 - [ ] Enemy AI
 - [ ] Grapling Hook Mechanic
-- [ ] Dash Ability
 - [ ] Ability to Slow Down Time
 - [ ] Melee Combat System
 - [ ] Explosive Objects
