@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
     public static AudioClip gunShootSound;    
     public static AudioClip revRelaodSound;   
     public static AudioClip dashSound;   
+    public static AudioClip arrowSound; 
     public static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -13,7 +14,8 @@ public class AudioManager : MonoBehaviour
     {        
         gunShootSound = Resources.Load<AudioClip>("laser0");     
         revRelaodSound = Resources.Load<AudioClip>("revreload");   
-        dashSound = Resources.Load<AudioClip>("dash");   
+        dashSound = Resources.Load<AudioClip>("dash"); 
+        arrowSound = Resources.Load<AudioClip>("arrow");    
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -29,7 +31,10 @@ public class AudioManager : MonoBehaviour
                 audioSrc.PlayOneShot(revRelaodSound, 1);
                 break;
             case "dash":
-            audioSrc.PlayOneShot(dashSound, 1);
+                audioSrc.PlayOneShot(dashSound, 1);
+              break;
+            case "crossbowShoot":
+                audioSrc.PlayOneShot(arrowSound, 1);
               break;
            
         }

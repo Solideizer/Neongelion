@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-   private void OnTriggerEnter(Collider other) 
+   private void OnCollisionEnter(Collision other) 
    {
        Destroy(gameObject);
    }

@@ -6,13 +6,12 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawn;
-    [SerializeField] private float bulletSpeed = 30f;
+    [SerializeField] private float bulletSpeed = 6000f;
     [SerializeField] private float lifeTime = 3f;
-    [SerializeField] private float damage = 100f;   
+    [SerializeField] private float damage = 20f;   
     private int maxAmmo = 6;
     private int currentAmmo;
-    [SerializeField] private float reloadTime = 3.2f;
-    [SerializeField] private float impactForce = 0.5f;
+    [SerializeField] private float reloadTime = 3.2f;    
     [SerializeField] private float fireRate = 1f;
     private float nextTimeToFire = 0f;
 
@@ -20,6 +19,9 @@ public class Shooting : MonoBehaviour
 
     private Animator gunAnim;
 
+    private float range = 20f;
+
+    private Camera cam;
    
 
     // Start is called before the first frame update    
@@ -27,6 +29,7 @@ public class Shooting : MonoBehaviour
     {       
         crosshair = GameObject.FindWithTag("Crosshair");
         gunAnim = GetComponentInChildren<Animator>();
+        cam = GetComponentInChildren<Camera>();
         currentAmmo = maxAmmo;
     }
 
@@ -56,6 +59,17 @@ public class Shooting : MonoBehaviour
         AudioManager.PlaySound("gunshoot");
         currentAmmo--;
 
+        RaycastHit hit;
+        if(Physics.Raycast(cam.transform.position,cam.transform.forward,out hit,range))
+        {
+            if(hit.transform.tag == "Enemy")
+            {
+                hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
+        }
+
+
+        //Instantiation of projectiles
         GameObject bullet = Instantiate(bulletPrefab);
 
         //Physics.IgnoreCollision(bulletCollider,gunCollider);
@@ -63,7 +77,7 @@ public class Shooting : MonoBehaviour
         bullet.transform.position = bulletSpawn.position;
         Vector3 rotation = bullet.transform.rotation.eulerAngles;
         bullet.transform.rotation = Quaternion.Euler(rotation.x,transform.eulerAngles.y,rotation.z);
-        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed * Time.deltaTime * 200, ForceMode.Impulse);
+        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed * Time.deltaTime, ForceMode.Impulse);
         StartCoroutine(DestroyBulletAfterTime(bullet,lifeTime));
     }
 

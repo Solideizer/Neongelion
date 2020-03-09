@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FPPlayer
   - Crosshair
+  - Enemy
   layers:
   - Default
   - TransparentFX

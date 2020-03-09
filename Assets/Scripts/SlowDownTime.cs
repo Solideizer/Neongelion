@@ -2,19 +2,15 @@
 using UnityEngine.Rendering.PostProcessing;
 public class SlowDownTime : MonoBehaviour {
     private Camera fpsCam;    
-    public static PostProcessVolume postProcessingVolume;
-    public static Vignette vignette;
-    public static int aimedIntensityMBlur = 20, defaultMBlurIntensity, currentMBlurIntensity;
-    public static float defaultVignetteIntensity = 0.25f, aimedIntensityVignette = 0.45f, currentVignetteIntensity;
+    private static PostProcessVolume postProcessingVolume;
+    private static Vignette vignette;    
+    private static float defaultVignetteIntensity = 0.25f, aimedIntensityVignette = 0.48f;
 
     // The audio that is affected by the slowmotion
     [Header ("Audio")]
     public AudioSource backgroundSound;
-    //public AudioSource shot;
-    //public AudioSource noAmmo;
-
     private float fixedDeltaTime;
-    // Start is called before the first frame update
+    
     void Awake () {
         fpsCam = GetComponent<Camera> ();
         postProcessingVolume = fpsCam.GetComponent<PostProcessVolume> ();
@@ -31,7 +27,8 @@ public class SlowDownTime : MonoBehaviour {
 
             //vignette adjustments
             postProcessingVolume.profile.RemoveSettings<Vignette> ();
-            vignette = postProcessingVolume.profile.AddSettings<Vignette> ();
+            postProcessingVolume.profile.AddSettings<Vignette> ();
+            
             postProcessingVolume.profile.TryGetSettings<Vignette> (out vignette);
             vignette.intensity.Override (Mathf.Lerp (defaultVignetteIntensity, aimedIntensityVignette, Time.deltaTime * 500));
 
@@ -46,7 +43,8 @@ public class SlowDownTime : MonoBehaviour {
 
             //vignette adjustments
             postProcessingVolume.profile.RemoveSettings<Vignette> ();
-            vignette = postProcessingVolume.profile.AddSettings<Vignette> ();
+            postProcessingVolume.profile.AddSettings<Vignette> ();
+
             postProcessingVolume.profile.TryGetSettings<Vignette> (out vignette);
             vignette.intensity.Override (Mathf.Lerp (aimedIntensityVignette, defaultVignetteIntensity, Time.deltaTime * 500));
 
