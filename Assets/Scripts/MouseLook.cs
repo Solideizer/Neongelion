@@ -15,28 +15,13 @@ public class MouseLook : MonoBehaviour
     private bool can_Unlock = true;
 
     [SerializeField]
-    private float sensivity = 1f;
+    private float sensivity = 1f;   
 
-    [SerializeField]
-    private int smooth_Steps = 10;
-
-    [SerializeField]
-    private float smooth_Weight = 0.4f;    
-
-    [SerializeField]
-    private float roll_Speed = 3f;
-
-    [SerializeField]
-    private Vector2 default_Look_Limits = new Vector2(-70f, 80f);
+    [SerializeField] private Vector2 default_Look_Limits = new Vector2(-70f, 80f);
 
     private Vector2 look_Angles;
 
-    private Vector2 current_Mouse_Look;
-    private Vector2 smooth_Move;
-
-    private float current_Roll_Angle;
-
-    private int last_Look_Frame;
+    private Vector2 current_Mouse_Look;    
 
     // Use this for initialization
     void Start()

@@ -29,7 +29,7 @@ public class Shooting : MonoBehaviour
     {       
         crosshair = GameObject.FindWithTag("Crosshair");
         gunAnim = GetComponentInChildren<Animator>();
-        cam = GetComponentInChildren<Camera>();
+        cam = GetComponentInParent<Camera>();
         currentAmmo = maxAmmo;
     }
 

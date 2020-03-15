@@ -26,7 +26,8 @@ public class SelectionManager : MonoBehaviour
                     cs.RecoverAmmo();
                     Destroy(selection.gameObject);
                 }
-            }
+            }else
+                return;
         }
     }
 }
