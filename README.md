@@ -19,6 +19,5 @@ A cyberpunk themed first person shooter where the protagonist is trying to escap
 
 
 ![screenshot](https://github.com/Solideizer/Neongelion/blob/master/Screenshots/image_0009.jpg)
-![screenshot](https://github.com/Solideizer/Neongelion/blob/master/Screenshots/image_0010.jpg)
-![screenshot](https://github.com/Solideizer/Neongelion/blob/master/Screenshots/image_0004.jpg)
-![screenshot](https://github.com/Solideizer/Neongelion/blob/master/Screenshots/image_0000.jpg)
+![screenshot](https://github.com/Solideizer/Neongelion/blob/master/Screenshots/neon1.png)
+![screenshot](https://github.com/Solideizer/Neongelion/blob/master/Screenshots/neon2.png)
