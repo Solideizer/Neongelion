@@ -5,17 +5,13 @@ A cyberpunk themed first person shooter where the protagonist is trying to escap
 
 ## **Implemented Features :** 
 - [x] FPS Combat
-- [x] Enemy AI
+- [x] Basic Enemy AI
 - [x] Dash Ability
 - [x] Ability to Slow Down Time
 - [x] Different Weapon Types
 
-## **Planned Features :**
-- [ ] Ragdoll Animations
-- [ ] Grapling Hook Mechanic
-- [ ] Stealth Mechanics
-- [ ] Explosive Objects-
-- [ ] Save/Load System
+## NOTICE:
+- Main purpouse of this project was to implement a slow down time mechanic. After adding that mechanic I realized that this mechanic needs to be supported in some visual way in order to be more polished. In order to achive that I learned how to manipulate post processing stack at runtime using a script. You can read about it in my blog if you are interested. [Click here](https://solideizer.github.io./blog-post.html)
 
 
 ![screenshot](https://github.com/Solideizer/Neongelion/blob/master/Screenshots/image_0009.jpg)
